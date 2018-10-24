@@ -32,7 +32,7 @@ namespace BanditTicket.Logic
                 thowEx("此票已开奖请勿重复抽奖!");
             }
             var result = GetRandowModel();
-            users.users.Add(new User { bayNumber = bayNumber, model = result, orderNumber = orderNumber, price = price });
+            users.users.Add(new User { bayNumber = bayNumber, model = result, orderNumber = orderNumber, price = price, createTime=DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
             config.SaveUser(users);
             return result;
         }

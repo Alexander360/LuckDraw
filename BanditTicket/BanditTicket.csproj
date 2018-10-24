@@ -118,7 +118,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image\img.png" />
+    <None Include="image\img.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\Jackpot.xml">
@@ -126,12 +128,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config\Jackpot2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Config\Jackpot2.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image\back.jpg" />
+    <None Include="image\back.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

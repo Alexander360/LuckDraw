@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"  Background="Transparent"
-             d:DesignHeight="700" d:DesignWidth="700">
+             d:DesignHeight="700" d:DesignWidth="700" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Storyboard x:Key="zhuandong" RepeatBehavior="1x">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path">
@@ -55,7 +55,7 @@
         </Style>
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot" Width="400" Height="400">
-        <Image Source="image/img.png" />
+        <Image x:Name="back"/>
         <!--<Path Data="M398.5,201 C398.5,310.07623 310.07623,398.5 201,398.5 C91.923767,398.5 3.5000076,310.07623 3.5000076,201 C3.5000076,91.923752 91.923767,3.4999962 201,3.4999962 C310.07623,3.4999962 398.5,91.923752 398.5,201 z M202.5,2.5 L202.5,399.5 M2.5,202.5 L399.5,202.5 M342.93097,62.219223 L61.182579,341.90985 M62.013805,59.270229 L342.11224,340.61316" Margin="-1" Stretch="Fill" StrokeThickness="5" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Stroke="White">
             <Path.RenderTransform>
                 <TransformGroup>

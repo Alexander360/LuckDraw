@@ -1,6 +1,7 @@
 ﻿using BanditTicket.Logic;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -10,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace BanditTicket
 {
@@ -23,6 +23,7 @@ namespace BanditTicket
         {
             InitializeComponent();
             Topmost = true;
+         
         }
 
         private void Turntable_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -36,6 +37,13 @@ namespace BanditTicket
             sb.AppendLine("用户单号：" + input.orderNumber);
             sb.AppendLine("中了：" + award.name);
             MessageBox.Show(sb.ToString(),"恭喜",MessageBoxButton.OK,MessageBoxImage.Information);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "back.jpg"), UriKind.Absolute);
+            BitmapImage bitmap = new BitmapImage(uri);
+            back.Source = bitmap;
         }
     }
 }

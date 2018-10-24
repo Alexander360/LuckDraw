@@ -10,11 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BanditTicket.Logic;
 //new
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.IO;
 
 namespace BanditTicket
 {
@@ -92,5 +92,11 @@ namespace BanditTicket
         /// </summary>
         public event AwardDelegate AwardProcess;
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "img.png"), UriKind.Absolute);
+            BitmapImage bitmap = new BitmapImage(uri);
+            back.Source = bitmap;
+        }
     }
 }

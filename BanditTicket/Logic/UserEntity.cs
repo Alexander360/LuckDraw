@@ -16,5 +16,7 @@ namespace BanditTicket.Logic
         public string orderNumber { get; set; }
         public double price { get; set; }
         public RandomModel model { get; set; }
+
+        public string createTime { get; set; }
     }
 }
