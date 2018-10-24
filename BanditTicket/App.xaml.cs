@@ -12,5 +12,9 @@ namespace BanditTicket
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            new Logic.JackPotConfig().loadJackPot();
+        }
     }
 }

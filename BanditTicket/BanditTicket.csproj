@@ -59,6 +59,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Logic\JackPotConfig.cs" />
+    <Compile Include="Logic\JackPotEntity.cs" />
     <Compile Include="Logic\LiuxuRandom.cs" />
     <Compile Include="Logic\RandomModel.cs" />
     <Compile Include="Turntable.xaml.cs">
@@ -110,7 +112,9 @@
     <Resource Include="image\img.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Config\Jackpot.xml" />
+    <Resource Include="Config\Jackpot.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
