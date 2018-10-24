@@ -9,35 +9,35 @@ namespace BanditTicket.Logic
     {
         public RandomModel GetRandomModel(List<RandomModel> list)
         {
-            var goList = list.Where(m => m.number > 0 && m.probability > 0).OrderBy(m => m.order).ToList();
+            var goList = list.Where(m => m.number > 0).OrderBy(m => m.id).ToList();
 
             if (goList.Any())
             {
                 //把概率分成100（如果所有概率相加超过100） 报错
-                var sumProbability = goList.Sum(m => m.probability);
-                if (sumProbability > 100)
-                {
-                    //大于100自动缩小
+                var sumNumber = goList.Sum(m => m.number);
+                //if (sumNumber > 100)
+                //{
+                //    //大于100自动缩小
 
-                    throw new ArgumentException("系统错误，请联系管理员！");
-                }
-                else if (sumProbability < 100)
-                {
-                    //小于100 自动增长
-                    var coff = 100.0 / sumProbability;
-                    //遍历所有概率自动增长
-                    list.ForEach(m => m.probability = m.probability * 100 / sumProbability);
-                }
+                //    throw new ArgumentException("系统错误，请联系管理员！");
+                //}
+                //else if (sumNumber < 100)
+                //{
+                //    //小于100 自动增长
+                //    var coff = 100.0 / sumNumber;
+                //    //遍历所有概率自动增长
+                //    list.ForEach(m => m.num = m.probability * 100 / sumProbability);
+                //}
                 var tRandom = new Random(Guid.NewGuid().GetHashCode());
-                var result = tRandom.Next(1, 99);
+                var result = tRandom.Next(0, sumNumber);
                 int i = 0;
                 foreach (var item in goList)
                 {
-                    if (i <= result && result < i + item.probability)
+                    if (i <= result && result < i + item.number)
                     {
                         return item;
                     }
-                    i += item.probability;
+                    i += item.number;
                 }
             }
             return null;

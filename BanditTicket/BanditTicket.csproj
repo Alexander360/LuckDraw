@@ -59,10 +59,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Input.xaml.cs">
+      <DependentUpon>Input.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logic\JackPotConfig.cs" />
     <Compile Include="Logic\JackPotEntity.cs" />
+    <Compile Include="Logic\JackPotLogic.cs" />
     <Compile Include="Logic\LiuxuRandom.cs" />
     <Compile Include="Logic\RandomModel.cs" />
+    <Compile Include="Logic\UserEntity.cs" />
     <Compile Include="Turntable.xaml.cs">
       <DependentUpon>Turntable.xaml</DependentUpon>
     </Compile>
@@ -73,6 +78,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Input.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Turntable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,9 +121,17 @@
     <Resource Include="image\img.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Config\Jackpot.xml">
+    <None Include="Config\Jackpot.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\Jackpot2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\back.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

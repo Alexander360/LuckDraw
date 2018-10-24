@@ -12,15 +12,91 @@ namespace BanditTicket.Logic
 {
     class JackPotConfig
     {
-        public void loadJackPot()
+        string userFilePath;
+        string jackPotFilePath;
+        public JackPotConfig()
         {
-            var r=Deserialize<JackPotEntity>(File.ReadAllText("Config/Jackpot.xml"));
-            var temp = new JackPotEntity()
+            jackPotFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "Jackpot.xml");
+            userFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config", "user.xml");
+        }
+        public JackPotEntity loadJackPot()
+        {
+            try
             {
-                   jackpot1= new jackpot { prize= new List<prizeEntity> { new prizeEntity { id = 1, name = "ddd" } }}
-                   , day=new List<DayItem> { new DayItem { items=new List<Item> { new Item { id=1, number=1, OpenTime=DateTime.Now, probability=20 } } , time=DateTime.Now} }
-            };
-            var s = Serializa<JackPotEntity>(temp);
+                var r = Deserialize<JackPotEntity>(File.ReadAllText(jackPotFilePath));
+
+                return r;
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message);
+                throw;
+            }
+
+        }
+
+        public UserEntity loadUsers()
+        {
+           
+            try
+            {
+                if (!File.Exists(userFilePath))
+                {
+                    return new UserEntity { users = new List<User>() };
+                }
+                var r = Deserialize<UserEntity>(File.ReadAllText(userFilePath));
+                return r;
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.Message);
+                throw;
+            }
+        }
+        public void SaveUser(UserEntity jack)
+        {
+            try
+            {
+                if (File.Exists(userFilePath))
+                {
+                    string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "userlog");
+                    if (!Directory.Exists(logPath))
+                    {
+                        Directory.CreateDirectory(logPath);
+                    }
+                    File.Move(userFilePath, Path.Combine(logPath, DateTime.Now.ToString("yyyyMMddHHmmss") + ".xml"));
+                }
+                File.WriteAllText(userFilePath, Serializa(jack));
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "抽奖失败，文件保存失败请联系管理员");
+                throw;
+            }
+
+        }
+
+        public void SaveJackPot(JackPotEntity jack)
+        {
+            try
+            {
+                if (File.Exists(jackPotFilePath))
+                {
+                    string logPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "potlog");
+                    if (!Directory.Exists(logPath))
+                    {
+                        Directory.CreateDirectory(logPath);
+                    }
+                    File.Move(jackPotFilePath, Path.Combine(logPath, DateTime.Now.ToString("yyyyMMddHHmmss") + ".xml"));
+                }
+                File.WriteAllText(jackPotFilePath, Serializa(jack));
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "抽奖失败，文件保存失败请联系管理员");
+                throw;
+            }
+
         }
         /// <summary>
         /// XML序列化

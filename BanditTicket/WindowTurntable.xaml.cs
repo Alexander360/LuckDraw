@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanditTicket.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace BanditTicket
         public WindowTurntable()
         {
             InitializeComponent();
+            Topmost = true;
         }
 
         private void Turntable_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -28,9 +30,12 @@ namespace BanditTicket
             this.DragMove();
         }
 
-        private void Turntable_AwardProcess(Award award)
+        private void Turntable_AwardProcess(RandomModel award, inputReuslt input)
         {
-            MessageBox.Show(award.ToString());
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("用户单号：" + input.orderNumber);
+            sb.AppendLine("中了：" + award.name);
+            MessageBox.Show(sb.ToString(),"恭喜",MessageBoxButton.OK,MessageBoxImage.Information);
         }
     }
 }

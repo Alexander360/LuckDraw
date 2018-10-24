@@ -14,7 +14,7 @@ namespace BanditTicket
     {
         public App()
         {
-            new Logic.JackPotConfig().loadJackPot();
+          //  new Logic.JackPotConfig().loadJackPot();
         }
     }
 }

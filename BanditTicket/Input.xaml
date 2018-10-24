@@ -1,0 +1,20 @@
+﻿<Window x:Class="BanditTicket.Input"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BanditTicket"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner" WindowStyle="None"
+        Title="Input" Height="300" Width="430">
+    <Grid>
+        <TextBox x:Name="t1" HorizontalAlignment="Left" Height="47" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="128,68,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="t2" HorizontalAlignment="Left" Height="47" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="128,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="t3" HorizontalAlignment="Left" Height="47" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="128,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" KeyDown="t3_KeyDown"/>
+        <Label x:Name="label" Content="4位收银机编号" HorizontalAlignment="Left" Margin="25,76,0,0" VerticalAlignment="Top"/>
+        <Label  Content="8位小票号" HorizontalAlignment="Left" Margin="25,137,0,0" VerticalAlignment="Top"/>
+        <Label Content="金额" HorizontalAlignment="Left" Margin="25,191,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="确认" HorizontalAlignment="Left" Margin="63,236,0,0" VerticalAlignment="Top" Width="87" Height="35" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="取消" HorizontalAlignment="Left" Margin="237,236,0,0" VerticalAlignment="Top" Width="87" Height="35" Click="button_Copy_Click"/>
+        <Label x:Name="label_Copy" Content="请输入小票信息" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
