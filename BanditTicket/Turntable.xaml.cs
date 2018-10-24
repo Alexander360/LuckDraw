@@ -52,9 +52,14 @@ namespace BanditTicket
                 windo.Owner = Application.Current.MainWindow;
                 if (windo.ShowDialog() == true)
                 {
-                    polt = logic.Next(result.bayNumber,result.orderNumber,result.price);
+                    polt = logic.Next(result.bayNumber, result.orderNumber, result.price);
                     btnStartTurntable.IsEnabled = false;
-                    _Index = polt.id - 2;
+                    var t = polt.id - 2;
+                    if (t<0)
+                    {
+                        t = 8 + t;
+                    }
+                    _Index = t;
                     Storyboard sb = (Storyboard)this.FindResource("zhuandong");
                     sb.Completed -= this.sb_Completed;
                     sb.Completed += new EventHandler(sb_Completed);
@@ -62,7 +67,7 @@ namespace BanditTicket
                     ((SplineDoubleKeyFrame)((DoubleAnimationUsingKeyFrames)sb.Children[0]).KeyFrames[3]).Value = _ListAngle[_Index];
                     sb.Begin();
                 }
-           
+
             }
             catch (Exception eex)
             {
@@ -80,7 +85,7 @@ namespace BanditTicket
                 dt.Stop();
                 _OldAngle = (_ListAngle[_Index] % 360);
                 btnStartTurntable.IsEnabled = true;
-                AwardProcess(polt,result);
+                AwardProcess(polt, result);
             };
             dt.Start();
         }
@@ -94,9 +99,13 @@ namespace BanditTicket
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "img.png"), UriKind.Absolute);
-            BitmapImage bitmap = new BitmapImage(uri);
-            back.Source = bitmap;
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "img.png");
+            if (File.Exists(path))
+            {
+                Uri uri = new Uri(path, UriKind.Absolute);
+                BitmapImage bitmap = new BitmapImage(uri);
+                back.Source = bitmap;
+            }
         }
     }
 }

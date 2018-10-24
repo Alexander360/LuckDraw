@@ -2,57 +2,12 @@
 <JackPotEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <day>
     <DayItem>
-      <time>2018-10-24</time>
+      <time>2018-10-25</time>
       <items>
         <Item>
-          <id>5</id>
-          <number>15</number>
+          <id>1</id>
+          <number>1</number>
           <OpenTime>AM</OpenTime>
-        </Item>
-        <Item>
-          <id>3</id>
-          <number>16</number>
-          <OpenTime>AM</OpenTime>
-        </Item>
-        <Item>
-          <id>7</id>
-          <number>10</number>
-          <OpenTime>AM</OpenTime>
-        </Item>
-        <Item>
-          <id>4</id>
-          <number>70</number>
-          <OpenTime>AM</OpenTime>
-        </Item>
-        <Item>
-          <id>8</id>
-          <number>50</number>
-          <OpenTime>AM</OpenTime>
-        </Item>
-        <Item>
-          <id>5</id>
-          <number>15</number>
-          <OpenTime>PM</OpenTime>
-        </Item>
-        <Item>
-          <id>3</id>
-          <number>16</number>
-          <OpenTime>PM</OpenTime>
-        </Item>
-        <Item>
-          <id>7</id>
-          <number>10</number>
-          <OpenTime>PM</OpenTime>
-        </Item>
-        <Item>
-          <id>4</id>
-          <number>117</number>
-          <OpenTime>PM</OpenTime>
-        </Item>
-        <Item>
-          <id>8</id>
-          <number>50</number>
-          <OpenTime>PM</OpenTime>
         </Item>
       </items>
     </DayItem>

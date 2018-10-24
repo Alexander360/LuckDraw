@@ -22,8 +22,10 @@ namespace BanditTicket
         public WindowTurntable()
         {
             InitializeComponent();
+#if !DEBUG
             Topmost = true;
-         
+#endif
+
         }
 
         private void Turntable_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -36,14 +38,19 @@ namespace BanditTicket
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("用户单号：" + input.orderNumber);
             sb.AppendLine("中了：" + award.name);
-            MessageBox.Show(sb.ToString(),"恭喜",MessageBoxButton.OK,MessageBoxImage.Information);
+            MessageBox.Show(sb.ToString(), "恭喜", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Uri uri = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "back.jpg"), UriKind.Absolute);
-            BitmapImage bitmap = new BitmapImage(uri);
-            back.Source = bitmap;
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "image", "back.jpg");
+            if (File.Exists(path))
+            {
+                Uri uri = new Uri(path, UriKind.Absolute);
+                BitmapImage bitmap = new BitmapImage(uri);
+                back.Source = bitmap;
+            }
+
         }
     }
 }

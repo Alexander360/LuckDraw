@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Input.xaml.cs">
       <DependentUpon>Input.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Input.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

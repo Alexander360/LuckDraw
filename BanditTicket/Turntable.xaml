@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"  Background="Transparent"
-             d:DesignHeight="700" d:DesignWidth="700" Loaded="UserControl_Loaded">
+             d:DesignHeight="800" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Storyboard x:Key="zhuandong" RepeatBehavior="1x">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path">
@@ -54,7 +54,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" Width="400" Height="400">
+    <Grid x:Name="LayoutRoot" >
         <Image x:Name="back"/>
         <!--<Path Data="M398.5,201 C398.5,310.07623 310.07623,398.5 201,398.5 C91.923767,398.5 3.5000076,310.07623 3.5000076,201 C3.5000076,91.923752 91.923767,3.4999962 201,3.4999962 C310.07623,3.4999962 398.5,91.923752 398.5,201 z M202.5,2.5 L202.5,399.5 M2.5,202.5 L399.5,202.5 M342.93097,62.219223 L61.182579,341.90985 M62.013805,59.270229 L342.11224,340.61316" Margin="-1" Stretch="Fill" StrokeThickness="5" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Stroke="White">
             <Path.RenderTransform>
@@ -72,7 +72,7 @@
                 </RadialGradientBrush>
             </Path.Fill>
         </Path>-->
-        <Path x:Name="path" Data="M200,24 L231.5,137 L201,201 L169,137 z" Margin="181,62.672,180.301,0" Stretch="Fill" Stroke="White" StrokeThickness="3" UseLayoutRounding="False" RenderTransformOrigin="0.493,1.002" Height="137.012" VerticalAlignment="Top">
+        <Path x:Name="path" Data="M200,24 L231.5,137 L201,171 L169,137 z" Margin="351,142.672,350.301,0" Stretch="Fill" Stroke="White" StrokeThickness="3" UseLayoutRounding="False" RenderTransformOrigin="0.493,1.002" Height="257.012" VerticalAlignment="Top">
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -89,7 +89,7 @@
                 </LinearGradientBrush>
             </Path.Fill>
         </Path>
-        <Button x:Name="btnStartTurntable" FocusVisualStyle="{x:Null}" Foreground="White" Cursor="Hand" Click="btnStartTurntable_Click" Content="开始" FontSize="20" HorizontalAlignment="Center" Height="100" Style="{DynamicResource ButtonStyle}" VerticalAlignment="Center" Width="100"/>
+        <Button x:Name="btnStartTurntable" FocusVisualStyle="{x:Null}" Foreground="White" Cursor="Hand" Click="btnStartTurntable_Click" Content="开始" FontSize="20" HorizontalAlignment="Center" Height="150" Style="{DynamicResource ButtonStyle}" VerticalAlignment="Center" Width="150"/>
         <!--
         <Path Data="M200,19.999998 C100.58875,20 20,100.58875 19.999998,200 20,299.41125 100.58875,380 200,380 299.41125,380 380,299.41125 380,200 380,100.58875 299.41125,20 200,19.999998 z M200,0 C310.45694,0 400,89.543053 400,200 400,310.45694 310.45694,400 200,400 89.543053,400 0,310.45694 0,200 0,89.543053 89.543053,0 200,0 z" Stretch="Fill" Stroke="#99E6FF00" >
             <Path.Fill>

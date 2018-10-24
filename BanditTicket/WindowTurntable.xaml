@@ -5,6 +5,6 @@
         Title="WindowTurntable" Height="900" Width="1400" Loaded="Window_Loaded">
     <Grid>
         <Image x:Name="back" Stretch="Fill"></Image>
-        <local:Turntable MouseLeftButtonDown="Turntable_MouseLeftButtonDown" AwardProcess="Turntable_AwardProcess" />
+        <local:Turntable MouseLeftButtonDown="Turntable_MouseLeftButtonDown" Width="800" Height="800" AwardProcess="Turntable_AwardProcess" />
     </Grid>
 </Window>

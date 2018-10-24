@@ -14,7 +14,20 @@ namespace BanditTicket
     {
         public App()
         {
-          //  new Logic.JackPotConfig().loadJackPot();
+            //  new Logic.JackPotConfig().loadJackPot()
+        }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            if (BanditTicket.Properties.Settings.Default.admin == "1")
+            {
+                StartupUri = new Uri("Detail.xaml", UriKind.Relative);
+            }
+            else
+            {
+                StartupUri = new Uri("WindowTurntable.xaml", UriKind.Relative);
+
+            }
         }
     }
 }
