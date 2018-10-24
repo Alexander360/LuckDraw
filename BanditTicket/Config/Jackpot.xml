@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    prize 奖品名称
+    day time 日期
+    all 全部不区分日期 （按需配置）
+    item(可以重复配置）  id 和 prize的id一致，number 数量 probability中将概率，OpenTime = AM ,PM ,ALL (默认 ALL)
+    
+    AM 10:00-13:00
+    PM 13:00-22:00
+    27号一共能抽奖369次其中上午161次
+    （二等奖出现15次，
+    三等奖16次，
+    四等奖10次，
+    五等奖上午70次，
+    幸运奖上午50次。
+    共计161次）。下午208次（二等奖出现15次，三等奖16次，四等奖10次，五等奖上午117次，幸运奖上午50次。共计208次）
+-->
+<root>
+  <jackpot>
+    <!--必须配置8个 和图片一致 顺时针配置-->
+    <prize name="一等奖" id="1"/>
+    <prize name="幸运奖" id="2"/>
+    <prize name="三等奖" id="3"/>
+    <prize name="五等奖" id="4"/>
+    <prize name="二等奖" id="5"/>
+    <prize name="五等奖" id="6"/>
+    <prize name="四等奖" id="7"/>
+    <prize name="幸运奖" id="8"/>
+  </jackpot>
+  <day time="2018-10-24">
+    <item id="5" number="15" probability="20" OpenTime="AM"/>
+    <item id="3" number="16" probability="20" OpenTime="AM"/>
+    <item id="7" number="10" probability="20" OpenTime="AM"/>
+    <item id="4" number="70" probability="20" OpenTime="AM"/>
+    <item id="8" number="50" probability="20" OpenTime="AM"/>
+    <item id="5" number="15" probability="20" OpenTime="PM"/>
+    <item id="3" number="16" probability="20" OpenTime="PM"/>
+    <item id="7" number="10" probability="20" OpenTime="PM"/>
+    <item id="4" number="117" probability="20" OpenTime="PM"/>
+    <item id="8" number="50" probability="20" OpenTime="PM"/>
+  </day>
+  
+  <all>
+    
+  </all>
+</root>
