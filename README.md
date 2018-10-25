@@ -12,3 +12,4 @@ JackPotLogic 是抽奖的准备工作<br />
 LiuxuRandom  是抽奖的具体逻辑<br />
 image文件夹下是需要用到的图片（背景图 大转盘图）<br />
 
+<img src="BanditTicket/image/main.png" />
